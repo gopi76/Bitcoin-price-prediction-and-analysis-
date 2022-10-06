@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <!--Favicon-->
+    <link rel="stylesheet icon" href="https://cdn.pixabay.com/photo/2017/08/14/14/38/bitcoin-2640692_960_720.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+    <!--CSS  -->
+    <link rel="stylesheet" href="System_Design.css">
+</head>
+<body>
+    <div class="container">
+      <img src="https://cdn.pixabay.com/photo/2016/01/06/21/42/light-bulbs-1125016_960_720.jpg" alt="Notebook" style="width:100%;">
+      <div class="content">
+        <h1 style="text-align:center">System Design</h1>
+      </div>
+    </div>
+    <h1 style="font-family:Monospace; text-align:center; Text-decoration: underline"><i>Data Flow Diagram</i></h1>
+    <p><i style="text-align:justify">The traditional visual representation of how information moves through a system is a data flow diagram (DFD). A clear and understandable DFD can visually represent the appropriate amount of the system requirement. It can be done manually, automatically, or even both.
+        </i></p>
+        <p style="text-align:justify;"><i>It demonstrates how information impacts the system, what changes the data, and where information is stored.</i></p>
+        <p style="text-align:justify;"><i>A DFD's goal is to outline the limitations and capabilities of a system as a whole. It can be utilized as a communication tool between a system analyst and any participant in the sequence that serves as the foundation for system redesign. The DFD is also known as a bubble chart or data flow graph.</i></p>
+        <p style="text-align:justify;"><i>A context diagram is a top-level data flow diagram (also called "Level 0"). There is only one process node ("Process 0") in it, and it generalizes how the entire system interacts with outside entities.</i></p>
+        <p style="text-align:justify;"><i>One process, which represents its complete system, is present in the context diagram, which is the highest level in a data flow diagram. The process is given the numb external entities are shown on the context diagram, as well as major data flow to and from them. The diagram does not contain any data stores.</i></p>
+        <img src="dataflow.jpg" alt="Notebook" style="width:40%;">
+        <br>
+        <br>
+    <h1 style="font-family:Monospace; text-align:center; Text-decoration: underline"><i>ER DIAGRAM</i></h1>
+        <p><i style="text-align:right">An Entity-Relationship (ER) Diagram is a flowchart form showing of flowchart that shows the relationships between "entities" like people, things, or concepts within a system. ER Diagrams are most frequently used in the disciplines of software engineering, business information systems, education, and research to build or troubleshoot relational databases. They are known as ERDs or ER Models, and they use a predefined collection of symbols that represent the interconnectedness of entities, relationships, and their qualities. These symbols include rectangles, diamonds, ovals, and connecting lines. They have verbs for relationships as nouns for entities, matching the grammatical framework.
+        </i></p>
+        <p><i style="text-align:right">Data structure diagrams (DSDs), which emphasize interactions between elements within entities rather than relationships between things themselves, are linked to ER diagrams. ER diagrams are frequently combined with data flow diagrams (DFDs), which depict the information flow for systems or processes.
+        </i></p>>
+        <img src="Er digram.jpg" alt="Notebook" style="width:50%;">
+        <ol>
+            <li><pre>Entity:
+                An entity is a piece of data or an item. In an ER diagram, an entity is shown as a rectangle.
+                For example: 
+                As numerous students attend a single college, the two entities Student and College in the accompanying ER diagram have a many-to-one relationship. Focus on entities for the moment; relationships will be covered in more detail later.one relationship. Focus on entities for the moment; relationships will be covered in more detail later.
+                </pre></li>
+            <li><pre>Weak Entity:
+                An entity that cannot be uniquely identified by its own attributes and relies on the relationship with other entity is called weak entity
+                </pre></li>
+            <li><pre>Attribute:
+                An attribute describes the property of an entity. An attribute is represented as Oval in an ER diagram. There are four types of attributes:
+                1.Key attribute
+                2. Composite attribute
+                3. Multivalued attribute
+                4. Derived attribute
+                </pre></li>
+            <li><pre>Relationship:
+                A relationship is represented by diamond shape in ER diagram; it shows the relationship among entities. There are four types of relationships:
+                1. One to One
+                2. One to Many
+                3. Many to One
+                4. Many to Many
+                </pre></li>
+          </ol>
+    </body>
+    </html>

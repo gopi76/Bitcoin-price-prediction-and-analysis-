@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 80%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center; Text-decoration: underline"><i>MEET OUR TEAM</i></h1>
+
+<br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="chomendra.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>CHOMENDRA SINGH SAHU</h2>
+        <p class="title">Lovely Professional University, Punjab</p>
+        <p>Registration Number: 12011328</p>
+        <p>Project Contribution: Front-end(complete Html and css)</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="VasuDevGanda.jpg" alt="Vasu" style="width:100%">
+      <div class="container">
+        <h2>VASU DEV GANDA</h2>
+        <p class="title">PDM University,Haryana</p>
+        <p>Roll no. A40320035</p>
+        <p>Project Contribution: Backend(algorithms) and report</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="Gopi_Krishna.jpg" alt="Gopi_krishna" style="width:100%">
+      <div class="container">
+        <h2>G.GOPI KRISHNA</h2>
+        <p class="title">Lovely Professional University, Punjab</p>
+        <p>Registration Number: 12115851</p>
+        <p>Project Contribution: Data Visualization and report </p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

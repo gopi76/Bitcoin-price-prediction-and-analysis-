@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Bitcoin_Price_Prediction</title>
+<style>
+  * {box-sizing: border-box;}
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-image: url("bitcoin.jpg");
+  padding: 40px;
+  text-align: center;
+  height:"35%";
+  width: "100%" ;
+}
+
+#navbar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 22px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 15%;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.navbar .search-container {
+  float: right;
+}
+.navbar .search-container button {
+  float: right;
+  padding: 20px;
+  margin-top: 16px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .search-container button:hover {
+  background: #ccc;
+}
+ .navbar a, .navbar input[type=text], .navbar .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 50px;
+  }
+  .navbar input[type=text] {
+    border: 3px solid #ccc;  
+  }
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  #navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: whitesmoke;
+    padding: 30px px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .container1 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  .centered1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 60%;
+  }
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.sidebar {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+  }
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  #main {
+    transition: margin-left .5s; 
+    padding: 20px;
+  }
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+</style>
+<link rel="stylesheet icon" href="https://cdn.pixabay.com/photo/2017/08/14/14/38/bitcoin-2640692_960_720.png">
+<link rel="stylesheet" href="Grid.css">
+<link rel="stylesheet" href="grid.js">
+</head>
+<body>
+
+<div class="header">
+  <h2>Bitcoin Price Analysis</h2>
+  <p>Analysis and Prediction of Bitcoin</p>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Different methods for Prediction</span>
+</div>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="Overview.html">Overview</a>
+    <a href="KNN.html">K-Nearest Neighbor</a>
+    <a href="Linear_Regression.html">Linear Regression</a>
+    <a href="Random_Forest.html">Random Forest</a>
+    <a href="Decision_tree.html">Decision Tree</a>
+    <a href="Ridge_regression.html">Ridge regression</a>
+    <a href="Lasso_Regression_.html">Lasso Regression</a>
+    <a href="LSTM.html">Long Short Term Memory(LSTM)</a>
+  </div> 
+<div id="navbar">
+  <a class="active" href="javascript:void(0)">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Project Information 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Introduction.html">Introduction</a>
+      <a href="Objective_and_scope.html">Objectives and project scope</a>
+      <a href="System_Design.html">System Design</a>
+    </div>
+  </div> 
+  <a href="Data_Visualization_1.html">Graph And Analysis</a>
+  <a href="Log_In.html"><i class="fa fa-fw fa-user"></i>Log In</a>
+  <a href="Sign_up.html"><i class="fa fa-fw fa-user"></i>Sign up</a>
+  <a href="About Team.html">About Us</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<div class="container1">
+  <img src="https://cdn.pixabay.com/photo/2021/05/22/06/53/btc-6272695_960_720.jpg" alt="Snow" style="width:100%;">
+  <div class="bottom-left">Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.</div>
+  
+  <div class="centered1">Bitcoin is an innovative payment network and a new kind of money.</div>
+</div>
+<div class="content">
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="bitcoin_1month.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://cdn.pixabay.com/photo/2019/09/16/19/20/bitcoin-4481815_960_720.jpg" style="width:80% height:50%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="bitcoin_6month.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }  
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

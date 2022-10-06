@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 80%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("https://cdn.pixabay.com/photo/2017/06/04/20/48/plan-2372176_960_720.jpg");
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 70%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+
+<div class="bg-text">
+  <h1>Objectives of project</h1>
+  <h1 style="font-size:50px">And</h1>
+  <h1>Project Scope</h1>
+</div>
+<br>
+<br>
+<h1 style="font-family:Monospace; text-align:center; Text-decoration: underline"><i>Objectives Of Projects</i></h1>
+<br>
+<h2><i style="font-family:Monospace;">In this thesis, we use machine learning techniques on Bitcoin Price data to
+    achieve the following objectives:
+    </i></h2>
+    <ol>
+        <li><h3>Here we analyse, previous year data, to identify the important variable which affect the price. By using different curves visualization of data become easy.</h3></li>
+        <li><h3>We use different machine learning algorithm and compare their accuracy rate, in order to achieve more accurate model.</h3></li>
+        <li><h3>User can choose particular algorithm to predict the future price of Bitcoin.</h3></li>
+      </ol>
+      <br>
+      <h1 style="font-family:Monospace; text-align:center; Text-decoration: underline"><i>Project scope</i></h1>
+      <br>
+      <h3 style="text-align:center;"><i>In this thesis, we will use the dataset obtained from python library, which provide as current modified data .We are using current data because of the intrinsic nature of the available data which contains a mix of technical and tactical performance indicators only. Since we know the outcome of the entire bitcoin price, this machine learning task will be supervised. We will do extensive pre-processing to modify the prepared current dataset for the suitability of each experiment. We will use many machine learning algorithms to get best and accurate model. </i></h3>
+</body>
+</html>
